@@ -1,12 +1,14 @@
+# vim: set filetype=python: 
 import subprocess
 import urllib
 
-SCRIPT = """/usr/bin/osascript<<END
+SCRIPT = """
+set picPath to POSIX path of (((path to home folder) as text) & "bieber.jpg")
 tell application "Finder"
-set desktop picture to POSIX file "%s"
+    set desktop picture to POSIX file picPath
 end tell
 END"""
 
-urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "bieber.jpg")
+urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "~/bieber.jpg")
 
 subprocess.Popen(SCRIPT%'bieber.jpg', shell=True)
