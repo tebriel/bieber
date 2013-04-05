@@ -7,6 +7,6 @@ set desktop picture to POSIX file "%s"
 end tell
 END"""
 
-urllib.urlretrieve("http://www.frodux.org/bieber.jpg", "bieber.jpg")
+urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "bieber.jpg")
 
 subprocess.Popen(SCRIPT%'bieber.jpg', shell=True)
