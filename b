@@ -9,6 +9,6 @@ tell application "Finder"
 end tell
 END"""
 
-urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "/tmp/bieber.jpg")
+urllib.urlretrieve("http://www.frodux.org/b/bieber.jpg", "/tmp/bieber.jpg")
 
 subprocess.Popen(SCRIPT, shell=True)
