@@ -1,0 +1,11 @@
+# vim: set filetype=python: 
+import subprocess
+import urllib
+
+SCRIPT = """
+gsettings set org.gnome.desktop.background picture-uri file:///tmp/bieber.jpg
+"""
+
+urllib.urlretrieve("http://www.frodux.org/b/bieber.jpg", "/tmp/bieber.jpg")
+
+subprocess.Popen(SCRIPT, shell=True)
