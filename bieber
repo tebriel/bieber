@@ -3,12 +3,12 @@ import subprocess
 import urllib
 
 SCRIPT = """
-set picPath to POSIX path of (((path to home folder) as text) & "bieber.jpg")
+/usr/bin/osascript<<END
 tell application "Finder"
-    set desktop picture to POSIX file picPath
+    set desktop picture to POSIX file "/tmp/bieber.jpg"
 end tell
 END"""
 
-urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "~/bieber.jpg")
+urllib.urlretrieve("http://www.frodux.org/bieber/bieber.jpg", "/tmp/bieber.jpg")
 
-subprocess.Popen(SCRIPT%'bieber.jpg', shell=True)
+subprocess.Popen(SCRIPT, shell=True)
